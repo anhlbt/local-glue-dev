@@ -1,8 +1,10 @@
 import sys
-from pyspark.context import SparkContext
-from pyspark.sql import SparkSession
+
 from awsglue.context import GlueContext
 from awsglue.dynamicframe import DynamicFrame
+from pyspark.context import SparkContext
+from pyspark.sql import SparkSession
+
 glueContext = GlueContext(SparkContext.getOrCreate())
 
 spark = SparkSession.builder.getOrCreate()

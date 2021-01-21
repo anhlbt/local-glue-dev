@@ -1,6 +1,8 @@
 import sys
+
 from awsglue.utils import getResolvedOptions
 from pyspark.sql import SparkSession
+
 spark = SparkSession.builder.getOrCreate()
 
 driver_class = "org.postgresql.Driver"

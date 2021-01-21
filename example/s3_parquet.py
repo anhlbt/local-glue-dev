@@ -1,4 +1,5 @@
 import sys
+
 from awsglue.utils import getResolvedOptions
 from pyspark.sql import SparkSession
 
