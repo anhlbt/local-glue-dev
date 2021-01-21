@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS office;
 
 CREATE TABLE IF NOT EXISTS office.employee (
   id      int,
-  name    varchar(20),
+  name    varchar(255),
   amount int
 );
 TRUNCATE TABLE office.employee;

@@ -7,3 +7,4 @@ aws s3api create-bucket \
     --endpoint-url http://localstack:4566
 
 mysql -h db -P3306 -uroot -ptest < $ROOT_DIR/mysql.sql
+psql -h db2 -U postgres < $ROOT_DIR/postgres.sql

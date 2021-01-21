@@ -2,7 +2,7 @@ FROM amazon/aws-glue-libs:glue_libs_1.0.0_image_01
 
 RUN rm /etc/apt/sources.list.d/jessie-backports.list && \
     apt-get update && \
-    apt-get install -y default-mysql-client tree less tmux sudo
+    apt-get install -y default-mysql-client postgresql-client tree less tmux sudo
 
 # Add user
 RUN useradd -g users -G sudo -m -s /bin/bash ubuntu && \
@@ -15,6 +15,8 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.
     unzip mysql-connector-java-8.0.23.zip && \
     mv mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar $SPARK_HOME/jars/ && \
     rm -rf mysql-connector-java-8.0.23
+RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar && \
+    mv postgresql-42.2.18.jar $SPARK_HOME/jars/
 
 COPY conf/spark-defaults.conf $SPARK_HOME/conf/spark-defaults.conf
 COPY .bashrc /home/ubuntu
