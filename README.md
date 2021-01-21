@@ -47,16 +47,18 @@ $ docker-compose exec glue /home/jupyter/jupyter_start.sh
 Access http://localhost:8888 to use jupyter notebook.
 
 
-## Access MySQL and localstack
+## Access MySQL, Postgres and localstack
 
 From container:
 ```bash
 $ mysql -h db -uroot -ptest -P3306
+$ psql -h db2 -Upostgres -p5432
 $ aws s3 ls --endpoint-url http://localstack:4566
 ```
 
 From host OS:
 ```bash
 $ mysql -h 127.0.0.1 -uroot -ptest -P3306
+$ psql -h 127.0.0.1 -Upostgres -p5432
 $ aws s3 ls --endpoint-url http://localhost:4566
 ```
